@@ -4,8 +4,8 @@ class TwittersController < ApplicationController
     @twitter = Twitter.new
   end
   def create
-    @twitters = Twitter.new(twi_params)
-    if @twitters.save
+    @twitter = Twitter.new(twi_params)
+    if @twitter.save
       redirect_to twitters_path
     else
       render "new"

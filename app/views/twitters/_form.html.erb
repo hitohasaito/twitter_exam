@@ -1,4 +1,14 @@
 <%= form_with(model: @twitter, local: true) do |f| %>
+<% if @twitter.errors.any? %>
+<div id = "error">
+  <h1><%= @twitter.errors.count %>件のエラーがあります</h1>
+  <ul>
+    <% @twitter.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <div class = "tweet">
 <%= f.label :content %>
 <%= f.text_area :content %>
