@@ -1,0 +1,8 @@
+<h1>新規投稿</h1>
+<%= form_with(model: @twitter, local: true) do |f| %>
+<div class = "tewwt">
+<%= f.label :content %>
+<%= f.text_area :content %>
+</div>
+<%= f.submit %>
+<% end %>
