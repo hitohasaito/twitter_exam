@@ -10,6 +10,9 @@ class TwittersController < ApplicationController
       render "new"
     end
   end
+  def index
+    @twitters = Twitter.all
+  end
 
 
 private
