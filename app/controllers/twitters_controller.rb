@@ -1,5 +1,5 @@
 class TwittersController < ApplicationController
-  before_action :set_twitter,only:[:edit, :update]
+  before_action :set_twitter,only:[:edit, :update, :destroy]
   def new
     @twitter = Twitter.new
   end
@@ -22,6 +22,10 @@ class TwittersController < ApplicationController
     else
       render "edit"
     end
+  end
+  def destroy
+    @twitter.destroy
+    redirect_to twitters_path notice: "削除しました"
   end
 
 
