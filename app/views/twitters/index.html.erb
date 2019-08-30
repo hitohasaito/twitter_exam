@@ -4,6 +4,7 @@
   <ul>
   <% @twitters.each do |t| %>
     <li><%= t.content %></li>
+    <%= link_to "編集する",edit_twitter_path(t.id) %>
   <% end %>
   </ul>
 </div>

@@ -1,4 +1,5 @@
 class TwittersController < ApplicationController
+  before_action :set_twitter,only:[:edit, :update]
   def new
     @twitter = Twitter.new
   end
@@ -13,11 +14,23 @@ class TwittersController < ApplicationController
   def index
     @twitters = Twitter.all
   end
+  def edit
+  end
+  def update
+    if @twitter.update(twi_params)
+      redirect_to twitters_path notice: "編集しました"
+    else
+      render "edit"
+    end
+  end
 
 
 private
 
  def twi_params
    params.require(:twitter).permit(:content)
+ end
+ def set_twitter
+   @twitter = Twitter.find(params[:id])
  end
 end
