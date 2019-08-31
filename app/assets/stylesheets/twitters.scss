@@ -1,11 +1,29 @@
 // Place all the styles related to the twitters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-ul{
-  list-style: none;
+
+html,body {
+    height: 100%;
 }
-.index_list{
-  border: groove;
-  width: 100%;
-  max-width: 600px;
+
+body {
+    text-align: center;
+    background-color: #99CCFF;
+  }
+
+header {
+  font-size: 200%;
+}
+
+.container {
+    max-width:  60%;
+    border-right: solid;
+    border-left: solid;
+    height: 100%;
+    background-color: white;
+    overflow:scroll;
+  }
+
+.list{
+  border-top: groove;
 }

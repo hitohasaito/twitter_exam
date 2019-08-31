@@ -1,9 +1,11 @@
-<h1>投稿一覧</h1>
-  <ul>
-  <% @twitters.each do |t| %>
-    <li class = "index_list" ><%= t.content %></li>
-    <%= link_to "編集する",edit_twitter_path(t.id) %>
-    <%= link_to "削除する",twitter_path(t.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
-  <% end %>
-  </ul>
-<%= link_to "新規投稿する", new_twitter_path %>
+<div class="page-header">
+    <h1>投稿一覧</h1>
+</div>
+    <% @twitters.each do |t| %>
+      <p class = "list"><%= t.content %></p>
+      <div class="btn-group" role="group">
+	      <button type="button" class="btn btn-default"><%= link_to "編集する",edit_twitter_path(t.id) %></button>
+	      <button type="button" class="btn btn-default"><%= link_to "削除する",twitter_path(t.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></button>
+      </div>
+    <% end %>
+<p><%= link_to "新規投稿画面へ", new_twitter_path %></p>
