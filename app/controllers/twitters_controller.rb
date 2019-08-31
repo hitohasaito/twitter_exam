@@ -27,6 +27,8 @@ class TwittersController < ApplicationController
     @twitter.destroy
     redirect_to twitters_path notice: "削除しました"
   end
+  def top
+  end
 
 
 private
