@@ -1,0 +1,9 @@
+<h3>以下の内容で送信します。</h3>
+
+<%= form_with(model: @twitter, url: twitters_path, local: true) do |f| %>
+  <%= f.hidden_field :content %>
+
+  <p>内容:<%= @twitter.content %></p>
+  <%= f.submit  "登録する" %>
+  <%= f.submit '戻る', name: "back"%>
+<% end %>

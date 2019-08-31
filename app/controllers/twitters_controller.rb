@@ -1,11 +1,15 @@
 class TwittersController < ApplicationController
   before_action :set_twitter,only:[:edit, :update, :destroy]
+
   def new
     @twitter = Twitter.new
   end
   def create
     @twitter = Twitter.new(twi_params)
-    if @twitter.save
+      if params[:back]
+      render "new"
+    elsif
+      @twitter.save
       redirect_to twitters_path
     else
       render "new"
@@ -29,7 +33,10 @@ class TwittersController < ApplicationController
   end
   def top
   end
-
+  def confirm
+      @twitter = Twitter.new(twi_params)
+      render :new if @twitter.invalid?
+  end
 
 private
 
