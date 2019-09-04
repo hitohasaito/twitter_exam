@@ -4,6 +4,7 @@ class TwittersController < ApplicationController
   def new
     @twitter = Twitter.new
   end
+
   def create
     @twitter = Twitter.new(twi_params)
       if params[:back]
@@ -15,11 +16,14 @@ class TwittersController < ApplicationController
       render "new"
     end
   end
+
   def index
     @twitters = Twitter.all
   end
+
   def edit
   end
+
   def update
     if @twitter.update(twi_params)
       redirect_to twitters_path notice: "編集しました"
@@ -27,12 +31,15 @@ class TwittersController < ApplicationController
       render "edit"
     end
   end
+
   def destroy
     @twitter.destroy
     redirect_to twitters_path notice: "削除しました"
   end
+
   def top
   end
+
   def confirm
       @twitter = Twitter.new(twi_params)
       render :new if @twitter.invalid?
@@ -40,10 +47,11 @@ class TwittersController < ApplicationController
 
 private
 
- def twi_params
-   params.require(:twitter).permit(:content)
- end
- def set_twitter
-   @twitter = Twitter.find(params[:id])
- end
+  def twi_params
+    params.require(:twitter).permit(:content)
+  end
+
+  def set_twitter
+    @twitter = Twitter.find(params[:id])
+  end
 end
