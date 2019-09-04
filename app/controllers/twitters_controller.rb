@@ -45,7 +45,7 @@ class TwittersController < ApplicationController
       render :new if @twitter.invalid?
   end
 
-private
+  private
 
   def twi_params
     params.require(:twitter).permit(:content)
