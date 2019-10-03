@@ -21,6 +21,7 @@ gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
 gem 'unicorn' # アプリケーションサーバのunicorn
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 
+gem 'jquery-rails'
 
 
 group :development, :test do
