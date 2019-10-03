@@ -6,10 +6,10 @@ set :application, 'twitterclone'
 
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'git@github.com:hitohasaito/twitter_exam.git'
+set :repo_url, 'https://github.com/hitohasaito/twitter_exam'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
-set :master, ENV['BRANCH'] || 'master'
+set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/twitterclone'
@@ -22,7 +22,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 set :keep_releases, 5
 
 # Rubyのバージョン
-set :rbenv_ruby, '2.5.1'
+set :rbenv_ruby, '2.4.5'
 set :rbenv_type, :system
 
 # 出力するログのレベル。エラーログを詳細に見たい場合は :debug に設定する。
